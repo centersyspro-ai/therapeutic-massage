@@ -24,6 +24,35 @@
     <meta name="theme-color" content="#5a8f76">
     <link rel="manifest" href="./manifest.json">
     <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+    
+
+    <!-- esto es para poner un bton encima de whatsapp sugiriendo instalar PWA  -->
+    <style>
+        .pwa-install-btn {
+            position: fixed;
+            bottom: 90px; /* Se posiciona justo arriba del botón de WhatsApp */
+            right: 20px;
+            background-color: #5a8f76; /* El color verde de tu tema */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            display: none; /* Se mantiene oculto hasta que el navegador dé luz verde */
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+        .pwa-install-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+
+
 </head>
 <body>
     <!-- Promotion Popup -->
@@ -41,6 +70,18 @@
             </button>
         </div>
     </div>
+
+
+     <!-- install pwa Floating Button -->
+    <button id="pwaInstallBtn" class="pwa-install-btn" aria-label="Install App">
+        <i class="fas fa-download"></i>
+    </button>
+
+    <a href="https://wa.me/524427128200?text=Hola,%20necesito%20informes%20sobre%20los%20masajes%20terapéuticos" class="whatsapp-btn" target="_blank" aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/524427128200?text=Hola,%20necesito%20informes%20sobre%20los%20masajes%20terapéuticos" class="whatsapp-btn" target="_blank" aria-label="Contact via WhatsApp">
@@ -454,7 +495,11 @@
 
     <script src="assets/js/script.js"></script>
     <script>
-        // Registrar el Service Worker para la PWA
+        // Variables para la PWA
+        let deferredPrompt;
+        const installBtn = document.getElementById('pwaInstallBtn');
+
+        // 1. Registrar el Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
@@ -462,6 +507,46 @@
                     .catch(err => console.error('Error al registrar el Service Worker', err));
             });
         }
+
+        // 2. Capturar el evento de instalación del navegador
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevenir que el navegador muestre su prompt automático genérico
+            e.preventDefault();
+            // Guardar el evento para dispararlo cuando el usuario presione NUESTRO botón
+            deferredPrompt = e;
+            // Hacer visible nuestro botón flotante de instalación
+            if (installBtn) {
+                installBtn.style.display = 'flex';
+            }
+        });
+
+        // 3. Acción al dar clic en el botón de instalación
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if (!deferredPrompt) return;
+                
+                // Mostrar la ventana nativa de instalación
+                deferredPrompt.prompt();
+                
+                // Esperar la respuesta del usuario
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`El usuario eligió: ${outcome}`);
+                
+                // Limpiar la variable porque el prompt ya se usó
+                deferredPrompt = null;
+                
+                // Ocultar el botón de inmediato
+                installBtn.style.display = 'none';
+            });
+        }
+
+        // 4. Ocultar el botón si la app ya fue instalada con éxito
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('¡Masajes ReaVital PWA instalada correctamente!');
+            if (installBtn) {
+                installBtn.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
