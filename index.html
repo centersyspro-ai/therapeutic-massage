@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ReaVital Massages, Querétaro. Personalized therapies since 2018 to relieve tension and improve your well-being.">
+    <meta name="keywords" content="therapeutic massages, therapies, relaxation, well-being, massages, health">
+    <meta name="author" content="Masajes ReaVital">
+    
+    <!-- Open Graph for social media -->
+    <meta property="og:title" content="ReaVital Massages - Well-being and Relaxation">
+    <meta property="og:description" content="Professional therapeutic massage services in Querétaro. Helping improve your quality of life since 2018.">
+    <meta property="og:type" content="website">
+    
+    <title>ReaVital Massages - Well-being and Relaxation</title>
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logomasajes.jpg">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#5a8f76">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+</head>
+<body>
+    <!-- Promotion Popup -->
+    <div id="promoPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <div class="popup-icon">
+                <i class="fas fa-gift"></i>
+            </div>
+            <h2>Special Offer!</h2>
+            <p>This month we have a <strong>2x1</strong> offer, receive a <strong>FREE</strong> service when purchasing a full therapy session.</p>
+            <p class="popup-small">Valid until the end of the month. Does not apply with other promotions.</p>
+            <button class="btn-popup" onclick="window.open('https://wa.me/524427128200?text=Hola,%20necesito%20informes%20sobre%20los%20masajes%20terapéuticos%20y%20la%20oferta%202x1', '_blank')">
+                I want my offer!
+            </button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/524427128200?text=Hola,%20necesito%20informes%20sobre%20los%20masajes%20terapéuticos" class="whatsapp-btn" target="_blank" aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header and Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="assets/images/logomasajes.jpg" alt="Logo Masajes ReaVital" class="logo">
+                <div class="logo-text">
+                    <h1>ReaVital Therapeutic Massages</h1>
+                    <p>Well-being and health since 2018</p>
+                </div>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav" id="mainNav">
+                <ul>
+                    <li><a href="#inicio" class="nav-link">Home</a></li>
+                    <li><a href="#nosotros" class="nav-link">About Us</a></li>
+                    <li><a href="#servicios" class="nav-link">Services</a></li>
+                    <li><a href="#detalle" class="nav-link">Therapies</a></li>
+                    <li><a href="#testimonios" class="nav-link">Testimonials</a></li>
+                    <li><a href="#galeria" class="nav-link">Gallery</a></li>
+                    <li><a href="#ubicacion" class="nav-link">Location</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Find Balance and Well-being</h2>
+                    <p class="hero-subtitle">Professional Massage Therapies</p>
+                    <p class="hero-text">Providing relief from muscle tension, stress, and promoting your comprehensive health since 2018.</p>
+                    <div class="hero-buttons">
+                        <a href="#servicios" class="btn btn-primary">View Services</a>
+                        <a href="https://wa.me/524427128200?text=Hola,%20necesito%20informes%20sobre%20los%20masajes%20terapéuticos" class="btn btn-primary" target="_blank">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section about-section" id="nosotros">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Learn about our history and commitment to your well-being</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-spa"></i>
+                        <span><img src="assets/images/terapeuta1.jpeg" alt="Therapist in massage room"></span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>ReaVital Therapeutic Massages</h3>
+                    <p>Since 2018, we have been committed to improving our clients' quality of life through professional and personalized massage therapies. Our founder, an entrepreneur passionate about wellness, studied various therapeutic techniques to offer a comprehensive service.</p>
+                    <p>Located in Querétaro, we specialize in identifying and treating the causes of muscle tension, stress, and other physical ailments, using evidence-based techniques tailored to each individual's needs.</p>
+                    <p>Our approach goes beyond temporary relief; we seek to promote lasting changes in postural health and the overall well-being of those who trust us.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <h4>Experience</h4>
+                            <p>Over 5 years of experience in therapies</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-user-md"></i>
+                            <h4>Professionalism</h4>
+                            <p>Certified therapist in constant training</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <h4>Personalized Approach</h4>
+                            <p>Each treatment is tailored to your specific needs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Discover our specialized therapies for your well-being</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Relaxing Massage</h3>
+                    <p>Gentle techniques to reduce stress, relieve tension, and promote a state of deep body and mental relaxation.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-clock"></i> 60-90 min</span>
+                        <span><i class="fas fa-calendar-check"></i> Weekly recommended</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Deep Tissue Massage</h3>
+                    <p>Focused on releasing muscle contractures, tension knots, and improving joint mobility.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-clock"></i> 60-75 min</span>
+                        <span><i class="fas fa-calendar-check"></i> As needed</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Aromatherapy</h3>
+                    <p>Combines therapeutic massages with essential oils to enhance physical and emotional benefits.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-clock"></i> 75 min</span>
+                        <span><i class="fas fa-calendar-check"></i> For special moments</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-temperature-high"></i>
+                    </div>
+                    <h3>Hot Stone Therapy</h3>
+                    <p>Hot volcanic stones that deepen muscle relaxation and improve blood circulation.</p>
+                    <div class="service-features">
+                        <span><i class="fas fa-clock"></i> 90 min</span>
+                        <span><i class="fas fa-calendar-check"></i> Monthly recommended</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text-Image Section 1 -->
+    <section class="section text-image-section" id="detalle">
+        <div class="container">
+            <div class="text-image-content">
+                <div class="text-image-text">
+                    <h2>Professional Therapeutic Massage</h2>
+                    <p>Our main focus is based on therapeutic massage, a specialized technique that seeks to identify and treat the causes of muscle and joint ailments, not just the symptoms.</p>
+                    <p>We use a combination of methods such as deep pressure, passive stretching, and joint mobilizations to restore proper muscle function and relieve chronic pain.</p>
+                    <p>Each session begins with an assessment to understand your specific needs, and is adapted in real-time based on your response to the techniques applied.</p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Relief of muscle and joint pain</li>
+                        <li><i class="fas fa-check-circle"></i> Improved blood and lymphatic circulation</li>
+                        <li><i class="fas fa-check-circle"></i> Reduction of stress and anxiety</li>
+                        <li><i class="fas fa-check-circle"></i> Increased flexibility and mobility</li>
+                        <li><i class="fas fa-check-circle"></i> Improved sleep quality</li>
+                    </ul>
+                </div>
+                <div class="text-image-image">
+                    <div class="image-placeholder large">
+                        <span><img src="assets/images/terapeuta-dando-masaje1.png" alt="Session"> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text-Image Section 2 -->
+    <section class="section text-image-section reverse">
+        <div class="container">
+            <div class="text-image-content">
+                <div class="text-image-image">
+                    <div class="image-placeholder large">
+                        <img src="assets/images/masaje-espalda1.jpeg" alt="Therapeutic back massage">
+                    </div>
+                </div>
+                <div class="text-image-text">
+                    <h2>Therapy for Back Pain</h2>
+                    <p>Back pain is one of the main reasons people seek massage therapy. Our specialized approach combines different techniques to offer effective relief.</p>
+                    <p>We work with methods such as myofascial release, pressure points, and guided stretches to address the causes of pain, whether from poor posture, injuries, or accumulated tension.</p>
+                    <p>In addition to the work during the session, we provide personalized recommendations for exercises and postural adjustments that you can do at home to maintain the benefits of the treatment.</p>
+                    <div class="statistics">
+                        <div class="stat">
+                            <h3>85%</h3>
+                            <p>of our clients report significant improvement</p>
+                        </div>
+                        <div class="stat">
+                            <h3>3-5</h3>
+                            <p>recommended sessions for optimal results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Testimonials</h2>
+                <p>What our clients say about our therapies</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>"After years with back pain from my office job, the sessions here changed my life. The therapist identified exactly my tension points and now I can sleep through the night without pain."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>María González</h4>
+                                <p>Client since 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>"As an amateur athlete, I suffer from frequent contractures. The deep tissue massage has helped me recover faster and improve my performance. The atmosphere is relaxing and professional."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Carlos Rodríguez</h4>
+                                <p>Client since 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <p>"I come for monthly relaxing massages and it's my favorite self-care moment. The therapist has a knack for finding tension areas I didn't even know I had. I always leave renewed."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Ana Martínez</h4>
+                                <p>Client since 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section" id="galeria">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Space</h2>
+                <p>Get to know our environment designed for your relaxation and well-being</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-slider">
+                    <div class="gallery-slide active">
+                        <div class="image-placeholder gallery">
+                            <i class="fas fa-couch"></i>
+                            <span>Waiting room and reception</span>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="image-placeholder gallery">
+                            <i class="fas fa-bed"></i>
+                            <span>Main therapy room</span>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="image-placeholder gallery">
+                            <i class="fas fa-spa"></i>
+                            <span>Relaxing atmosphere with aromatherapy</span>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="image-placeholder gallery">
+                            <i class="fas fa-oil-can"></i>
+                            <span>Essential oils and natural products</span>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="image-placeholder gallery">
+                            <i class="fas fa-wind"></i>
+                            <span>Details that promote relaxation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn prev-btn" aria-label="Previous image">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="gallery-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                        <span class="dot" data-slide="4"></span>
+                    </div>
+                    <button class="gallery-btn next-btn" aria-label="Next image">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section" id="ubicacion">
+        <div class="container">
+            <div class="section-header">
+                <h2>Location</h2>
+                <p>Visit our location.</p>
+            </div>
+            
+            <div class="map-content">
+                <div class="map-info">
+                    <h3>Our Facility</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Aguascalientes no. 10 Col. Los Olvera, Quérétaro, Qro. C.P. 76902</p>
+                    <p><i class="fas fa-clock"></i> <strong>Hours:</strong> Monday to Friday: 9:00 am - 7:00 pm | Saturdays: 10:00 am - 4:00 pm</p>
+                    <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +52 442 712 8200</p>
+                    <p><i class="fas fa-calendar-check"></i> <strong>Appointments:</strong> Booking in advance is highly recommended</p>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7471.676009052003!2d-100.41741685524903!3d20.55380802551316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses!2smx!4v1770692685351!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/logomasajes.jpg" alt="Logo Masajes ReaVital">
+                        <div>
+                            <h3>ReaVital Massages</h3>
+                            <p>Well-being and health since 2018</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">We offer professional massage therapies in Querétaro, with a personalized focus to improve your quality of life.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#inicio">Home</a></li>
+                        <li><a href="#nosotros">About Us</a></li>
+                        <li><a href="#servicios">Services</a></li>
+                        <li><a href="#testimonios">Testimonials</a></li>
+                        <li><a href="#ubicacion">Location</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Aguascalientes no. 10 Col. Los Olvera, Quérétaro, Qro. C.P. 76902.</p>
+                    <p><i class="fas fa-phone-alt"></i> +52 442 712 8200</p>
+                    <p><i class="fas fa-clock"></i> M-F: 9:00 am - 7:00 pm | S: 10:00 am - 4:00 pm</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <p>Connect with us on social media</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/524427128200?text=Hola,%20necesito%20informes%20sobre%20los%20masajes%20terapéuticos" aria-label="WhatsApp" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p class="footer-note">Schedule your appointment via WhatsApp for a faster response</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Masajes ReaVital. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> for your well-being</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Registrar el Service Worker para la PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registrado con éxito', reg))
+                    .catch(err => console.error('Error al registrar el Service Worker', err));
+            });
+        }
+    </script>
+</body>
+</html>

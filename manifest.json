@@ -1,0 +1,22 @@
+{
+  "name": "ReaVital Massages",
+  "short_name": "ReaVital",
+  "description": "Professional therapeutic massage services in Querétaro.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme-color": "#5a8f76",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/images/logomasajes.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/images/logomasajes.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
