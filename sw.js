@@ -1,16 +1,10 @@
 const CACHE_NAME = 'reavital-cache-v1';
 const ASSETS = [
   './',
-  './index.html',
-  './assets/styles/main.css',
-  './assets/js/script.js',
-  './assets/images/logomasajes.jpg',
-  './assets/images/terapeuta1.jpeg',
-  './assets/images/terapeuta-dando-masaje1.png',
-  './assets/images/masaje-espalda1.jpeg'
+  './index.html'
 ];
 
-// Instalar el Service Worker y almacenar recursos en caché
+// Instalar el Service Worker y almacenar los recursos básicos
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -34,11 +28,21 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Estrategia de carga: Network First (cae en caché si no hay internet)
+// Estrategia Stale-While-Revalidate (Carga rápido desde caché, pero actualiza de fondo)
 self.addEventListener('fetch', e => {
   e.respondWith(
-    fetch(e.request).catch(() => {
-      return caches.match(e.request);
+    caches.match(e.request).then(cachedResponse => {
+      if (cachedResponse) {
+        // Devolvemos la copia en caché de inmediato, pero buscamos en la red por si cambió
+        fetch(e.request).then(networkResponse => {
+          if (networkResponse.status === 200) {
+            caches.open(CACHE_NAME).then(cache => cache.put(e.request, networkResponse));
+          }
+        }).catch(() => {/* Ignorar errores de red de fondo */});
+        
+        return cachedResponse;
+      }
+      return fetch(e.request);
     })
   );
 });
